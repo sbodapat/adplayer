@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <video src="{{url_for("static",filename =filenameargument)}}" id="myVideo" style="position:absolute;height:100%;width:100%;" align="center" controls autoplay>
+      video not supported
+    </video>
+
+    
+    <script type='text/javascript'>
+      document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+      function myHandler() {
+        // What you want to do after the event
+        location.reload(true)
+    }
+    </script>
+
+
+  </body>
+</html>

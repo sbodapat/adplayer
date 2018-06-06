@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+        div.wrapper {
+            position:  absolute;
+            top : 200px;
+            left: 300px;
+            width: 500px;
+            height:600px;
+            
+        }
+
+        input[type="text"] {
+             position: relative;
+             display: block;
+             margin : 0 auto;
+        }
+
+    </style>
+
+    <title></title>
+  </head>
+  <body>
+    <div class='wrapper'>
+    <h1>Please Enter your mobile number:</h1><br>
+    <form id="MyForm"  action="{{url_for('submit')}}" method="get">
+      <input type="text"  name="mobile" minlenght="10" maxlength="13" pattern="[6789][0-9]{9}" placeholder="9238474637" value="" style=font-size:13pt;height:40px;width:100px;  align="middle" required autofocus >
+    </form>
+    <p id="warn" style="color:red;" ></p>
+    </div>
+  </body>
+  <script>
+  var time=1;
+  var auto_refresh = setTimeout(
+  function()
+  {
+  submitform();
+}, time*1000*40);
+  function submitform()
+  {
+    window.location.href = "/";
+  }
+  var displayalert = setTimeout(
+    function(){
+      document.getElementById('warn').innerHTML="PLEASE ENTER THE MOBILE NUMBER";
+    }
+  ,time*1000*20)
+  </script>
+</html>
