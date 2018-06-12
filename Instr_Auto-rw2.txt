@@ -1,0 +1,34 @@
+https://raspberrypi.stackexchange.com/questions/4123/running-a-python-script-at-startup
+Here is the solution that I constantly use.
+
+Create a desktop file
+
+xyz.desktop
+type the following into it
+
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=<Application Name Goes here>
+Comment=
+Exec=  python /home/pi/Desktop/execute_on_boot.py
+StartupNotify=false
+Terminal=true
+Hidden=false
+paste this file into the
+
+/home/pi/.config/autostart/
+and restart your raspberry pi and it should automatically run your program in a new terminal
+
+T:
+Here's an even easier method that worked for me. Modify the autostart in LXDE.
+
+Open a terminal and edit the autostart file as follows:
+
+sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
+add the following line of text to the bottom(modify the path as needed to where your example.py is located)
+
+@/usr/bin/python /home/pi/example.py
+ctr-x, and save. You may need to make the python script executable as follows:
+
+sudo chmod +x /home/pi/example.py
