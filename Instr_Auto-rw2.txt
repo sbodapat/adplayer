@@ -32,3 +32,17 @@ add the following line of text to the bottom(modify the path as needed to where 
 ctr-x, and save. You may need to make the python script executable as follows:
 
 sudo chmod +x /home/pi/example.py
+
+
+
+Install the following: 
+Flask
+RPi.GPIO
+Keyboard
+CUPS
+In an LXTerminal :-
+sudo apt-get install system-config-printer
+
+You will get a menu entry in Preferences/Printing.
+pip3 install xlib
+pip3 install pyautogui
